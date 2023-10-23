@@ -1,0 +1,38 @@
+[
+    {
+      "serviceName": "Venue Rental",
+      "image": "https://ibb.co/dpyFZbG",
+      "price": "$5,000",
+      "description": "Elegant and spacious venues for your dream wedding."
+    },
+    {
+      "serviceName": "Catering Services",
+      "image": "https://ibb.co/gb8tfnp",
+      "price": "$4,500",
+      "description": "Delicious food and beverages to satisfy your guests."
+    },
+    {
+      "serviceName": "Photography & Videography",
+      "image": "https://ibb.co/Ht8vwLB",
+      "price": "$3,800",
+      "description": "Capture every special moment with our expert photographers."
+    },
+    {
+      "serviceName": "Floral Arrangements",
+      "image": "https://ibb.co/ZmrsgXD",
+      "price": "$2,500",
+      "description": "Beautiful floral arrangements to decorate your venue."
+    },
+    {
+      "serviceName": "Entertainment Services",
+      "image": "https://ibb.co/j312bgF",
+      "price": "$4,200",
+      "description": "Live music, DJs, and entertainment for your guests."
+    },
+    {
+      "serviceName": "Transportation Services",
+      "image": "https://ibb.co/DpBJ4Pj",
+      "price": "$1,200",
+      "description": "Luxurious transportation for you and your guests."
+    }
+  ]

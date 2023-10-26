@@ -1,12 +1,25 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
 
     const handleSubmit = e =>{
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email,password)
+
+        createUser(email,password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
+
 
     }
     return (

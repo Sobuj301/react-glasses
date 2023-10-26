@@ -1,13 +1,24 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 
 const Login = () => {
+
+
+    const {login} = useContext(AuthContext)
 
     const handleSubmit = e =>{
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-
-        console.log('regi',email,password)
+        login(email,password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
     }
     return (
         <div className="max-w-5xl mx-auto mt-10">

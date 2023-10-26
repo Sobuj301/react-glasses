@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/Error/ErrorPage"
 import Login from "../Pages/Login/Login"
 import Register from "../Pages/Register/Register"
 import Details from "../Pages/Details/Details"
+import PrivateRoute from "../Private/PrivateRoute"
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path:"/details/:id",
                 loader:() => fetch('../../public/services.json'),
-                element:<Details></Details>
+                element:<PrivateRoute><Details></Details></PrivateRoute>
                 
             }
         ]

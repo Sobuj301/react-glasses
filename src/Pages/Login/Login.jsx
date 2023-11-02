@@ -1,11 +1,19 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
 
+    const navigate = useNavigate()
 
-    const {login} = useContext(AuthContext)
+
+    const {login,googleLogin} = useContext(AuthContext)
+    const location =useLocation()
+    console.log(location)
+    const Navigate = useNavigate();
 
     const handleSubmit = e =>{
         e.preventDefault()
@@ -14,12 +22,23 @@ const Login = () => {
         login(email,password)
         .then(result =>{
             const user = result.user;
+            swal("Login successful");
+            Navigate(location?.state ?  location.state : '/')
+
             console.log(user)
         })
         .catch(error =>{
             console.log(error.message)
-        })
+        })   
     }
+       const handleGoogleLogin = (media) =>{
+        media()
+        .then(result => {
+            toast.success("login successful")
+            navigate('/')
+        })
+        .catch()
+       }
     return (
         <div className="max-w-5xl mx-auto mt-10">
            <h2 className="text-3xl font-bold">Please Login!!</h2>
@@ -42,7 +61,10 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+
+                        <h2>New here? please <Link className="text-blue-500 underline" to="/register">Register</Link></h2>
                     </form>
+                    <button onClick={()=>handleGoogleLogin(googleLogin)} className="btn ml-10">Google</button>
        </div>
     );
 };

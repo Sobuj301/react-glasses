@@ -5,9 +5,8 @@ import swal from 'sweetalert';
 
 
 
+
 const Register = () => {
-    const [error, setError] = useState(null)
-    
     const {createUser} = useContext(AuthContext)
 
    
@@ -20,7 +19,7 @@ const Register = () => {
 
 
         if(password.length > 6){
-          return "password less than 6 character"
+         return swal('password must be at least six character')
         }
        
 

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext,} from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { Link } from "react-router-dom";
 import swal from 'sweetalert';
@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
+  
 
    
 
@@ -16,13 +17,6 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email,password)
-
-
-        if(password.length > 6){
-         return swal('password must be at least six character')
-        }
-       
-
 
         createUser(email,password)
         .then(result =>{
